@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+uploadArchives {
+	repositories.mavenDeployer {
+		repository (url: "file:///home/hariram/Personal/github/maven-repo-snapshot")
+		pom.version = '0.1'
+		pom.artifactId = 'pdfwriter'
+		pom.groupId = 'com.hariram'
+	}
+}
+
+sourceCompatibility = '1.8'
+
+jar {
+    baseName = 'pdfwriter'
+    version =  '0.1'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile("log4j:log4j:1.2.17")
+    compile("junit:junit:4.4")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
+
+task generateJavadoc(type: Javadoc) {
+  source = sourceSets.main.allJava
+  destinationDir = reporting.file("pdfwriter-docs")
+}
