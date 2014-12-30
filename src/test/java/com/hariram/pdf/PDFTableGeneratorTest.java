@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.hariram.pdf;
 
 import static org.junit.Assert.*;
@@ -18,7 +15,7 @@ import org.junit.Test;
  */
 public class PDFTableGeneratorTest {
 
-	//@Test
+	@Test
 	public void testTable() {
 		try {
 			Map<Integer, String> columnMap = new TreeMap<Integer, String>();
@@ -42,7 +39,7 @@ public class PDFTableGeneratorTest {
 			Table table = PDFSample.createContent(columnMap, content);
 			//System.out.println(table.getNumberOfColumns());
 			//System.out.println(table.getColumns().get(9).getName());
-			new PDFTableGenerator().generatePDF(table,"sample2.pdf");
+			new PDFTableGenerator().generatePDF(table,"sampletable.pdf");
 			assertTrue(true);
 		} catch (COSVisitorException | IOException e) {
 			// TODO Auto-generated catch block
@@ -58,7 +55,7 @@ public class PDFTableGeneratorTest {
 					"FirstName", "LastName", "fakemail@mock.com", "12345", "yes", "XH4234FSD", "4334", "yFone 5 XS", "31/05/2013 07:15 am", "WEB" 
 			};
 			
-			new PDFTableGenerator().generatePDF(content,"sample3.pdf");
+			new PDFTableGenerator().generatePDF(content,"samplecontent.pdf");
 			assertTrue(true);
 		} catch (COSVisitorException | IOException e) {
 			// TODO Auto-generated catch block

@@ -51,9 +51,9 @@ public class PDFTableGenerator {
 		
 		PDFont font = PDType1Font.TIMES_ROMAN;
 
-		//PDFUtil.writeText(contrentStream, "Hello World1", font, 12, rect, ++line);
+		PDFUtil.writeText(contentStream, "Hello World1", font, 12, rect, ++line);
 		
-		//PDFUtil.writeText(contentStream, "Hello World2", font, 12, rect, ++line);
+		PDFUtil.writeText(contentStream, "Hello World2", font, 12, rect, ++line);
 		
 		for(int i = 0; i < content.length; i++) {
 			PDFUtil.writeText(contentStream, content[i], font, 12, rect, ++line);
