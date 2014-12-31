@@ -1,2 +1,3 @@
 0.1 - Initial version
 0.2 - minor change (adding one test method)
+0.3 - changing main class name as PDFGenerator
