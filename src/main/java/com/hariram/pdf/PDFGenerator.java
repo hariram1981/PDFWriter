@@ -10,7 +10,7 @@ import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
-public class PDFTableGenerator {
+public class PDFGenerator {
 
     // Generates document from Table object
     public void generatePDF(Table table, String filePath) throws IOException, COSVisitorException {
