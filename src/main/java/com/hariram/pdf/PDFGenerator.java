@@ -68,7 +68,6 @@ public class PDFGenerator {
         // Calculate pagination
         Integer rowsPerPage = new Double(Math.floor(table.getHeight() / table.getRowHeight())).intValue() - 1; // subtract
         Integer numberOfPages = new Double(Math.ceil(table.getNumberOfRows().floatValue() / rowsPerPage)).intValue();
-
         // Generate each page, get the content and draw it
         for (int pageCount = 0; pageCount < numberOfPages; pageCount++) {
             PDPage page = generatePage(doc, table);
@@ -88,10 +87,11 @@ public class PDFGenerator {
 
         // Position cursor to start drawing content
         float nextTextX = table.getMargin() + table.getCellMargin();
+        //table.setTextFont(PDType1Font.HELVETICA_BOLD_OBLIQUE);
+        //table.setFontSize(16);
         // Calculate center alignment for text in cell considering font height
         float nextTextY = tableTopY - (table.getRowHeight() / 2)
                 - ((table.getTextFont().getFontDescriptor().getFontBoundingBox().getHeight() / 1000 * table.getFontSize()) / 4);
-        System.out.println(table.getColumnsNamesAsArray());
         // Write column headers
         writeContentLine(table.getColumnsNamesAsArray(), contentStream, nextTextX, nextTextY, table);
         nextTextY -= table.getRowHeight();
@@ -110,7 +110,6 @@ public class PDFGenerator {
     // Writes the content for one line
     private void writeContentLine(String[] lineContent, PDPageContentStream contentStream, float nextTextX, float nextTextY,
             Table table) throws IOException {
-    	System.out.println(table.getNumberOfColumns());
         for (int i = 0; i < table.getNumberOfColumns(); i++) {
             String text = lineContent[i];
             contentStream.beginText();
@@ -165,6 +164,7 @@ public class PDFGenerator {
         if (table.isLandscape()) {
             contentStream.concatenate2CTM(0, 1, -1, 0, table.getPageSize().getWidth(), 0);
         }
+        
         contentStream.setFont(table.getTextFont(), table.getFontSize());
         return contentStream;
     }

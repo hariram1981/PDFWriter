@@ -36,7 +36,7 @@ public class PDFTableGeneratorTest {
 			        { "FirstName", "LastName", "fakemail@mock.com", "12345", "yes", "XH4234FSD", "4334", "yFone 5 XS", "31/05/2013 07:15 am", "WEB" }
 			};
 			
-			Table table = PDFSample.createContent(columnMap, content);
+			Table table = PDFUtil.createContent(columnMap, content);
 			//System.out.println(table.getNumberOfColumns());
 			//System.out.println(table.getColumns().get(9).getName());
 			new PDFGenerator().generatePDF(table,"sampletable.pdf");
