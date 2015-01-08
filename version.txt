@@ -2,3 +2,4 @@
 0.2 - minor change (adding one test method)
 0.3 - changing main class name as PDFGenerator
 0.4 - Removing PDFSample and moving code to PDFUtil
+0.5 - adding conversion to data format for pdf writing
