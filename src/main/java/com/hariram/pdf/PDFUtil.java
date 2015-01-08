@@ -110,4 +110,29 @@ public class PDFUtil {
             .build();
         return table;
     }   
+	
+	public static String[][] convertData(Map<String, List<String>> dataMap) {
+		int length = dataMap.keySet().size();
+		String[][] data = new String[length][];
+		//Add columns first
+
+		List<List<String>> dataList = new ArrayList<List<String>>();
+		//Add data here
+		dataMap.keySet().stream()
+			.forEach(key -> {
+				List<String> values = new ArrayList<String>();
+				values.add(key);
+				values.addAll(dataMap.get(key));
+				dataList.add(values);
+			});
+		
+		System.out.println(dataList);
+		
+		int i = 0;
+		for(List<String> list : dataList) {
+			data[i++] = list.toArray(new String[0]);
+		}
+		
+		return data;
+	}
 }
