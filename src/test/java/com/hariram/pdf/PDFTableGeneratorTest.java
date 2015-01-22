@@ -87,10 +87,10 @@ public class PDFTableGeneratorTest {
 		dataMap.put("B", list);
 
 		Map<Integer, String> columnMap = new TreeMap<Integer, String>();
-		columnMap.put(1, "col1-100");
-		columnMap.put(2, "col2-100");
-		columnMap.put(3, "col3-100");
-		columnMap.put(4, "col4-100");
+		columnMap.put(1, "col1");
+		columnMap.put(2, "col2");
+		columnMap.put(3, "col3");
+		columnMap.put(4, "col4");
 		
 		
 		try {

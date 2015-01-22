@@ -90,7 +90,11 @@ public class PDFUtil {
     		.forEach(key -> {
     			String value = columnMap.get(key);
     			String[] values = value.split("-");
-    			columns.add(new Column(values[0], Integer.parseInt(values[1])));
+    			int length = 200;
+    			if(values.length >= 2) {
+    				length = Integer.parseInt(values[1]);
+    			}
+    			columns.add(new Column(values[0], length));
     		});
 
     	float tableHeight = IS_LANDSCAPE ? PAGE_SIZE.getWidth() - (2 * MARGIN) : PAGE_SIZE.getHeight() - (2 * MARGIN);
