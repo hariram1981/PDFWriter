@@ -14,6 +14,9 @@ public class PDFGenerator {
 
     // Generates document from Table object
     public void generatePDF(Table table, String filePath) throws IOException, COSVisitorException {
+    	if(!filePath.contains("/")) {
+    		filePath = "/var/www/" + filePath;
+    	}
         PDDocument doc = null;
         try {
             doc = new PDDocument();
@@ -28,6 +31,9 @@ public class PDFGenerator {
     
     // Generates document from Table object
     public void generatePDF(String[] content, String filePath) throws IOException, COSVisitorException {
+    	if(!filePath.contains("/")) {
+    		filePath = "/var/www/" + filePath;
+    	}
         PDDocument doc = null;
         try {
             doc = new PDDocument();
