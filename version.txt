@@ -4,3 +4,4 @@
 0.4 - Removing PDFSample and moving code to PDFUtil
 0.5 - adding conversion to data format for pdf writing
 0.6 - setting default column width to be 200 if it isn't provided
+0.7 - changing location file is going to be saved
